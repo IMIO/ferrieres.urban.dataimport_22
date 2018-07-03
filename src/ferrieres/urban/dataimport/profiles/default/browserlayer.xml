@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="ferrieres.urban.dataimport"
+      interface="ferrieres.urban.dataimport.interfaces.IFerrieresUrbanDataimportLayer"
+  />
+</layers>
