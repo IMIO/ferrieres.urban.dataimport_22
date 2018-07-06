@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="ferrieres.urban.dataimport">
+
+
+    <adapter
+        for="imio.urban.dataimport.interfaces.IImportSettingsForm"
+        factory=".settings.FerrieresCsvImporterFromImportSettings"
+        provides="imio.urban.dataimport.csv.interfaces.ICSVImporter"
+        name="ferrieres csv licences"
+    />
+
+    <adapter
+        for="imio.urban.dataimport.csv.interfaces.ICSVImporter"
+        factory=".importer.FerrieresCSVMapping"
+        provides="imio.urban.dataimport.interfaces.IObjectsMapping"
+        name="objects mapping"
+    />
+
+    <adapter
+        for="imio.urban.dataimport.csv.interfaces.ICSVImporter"
+        factory=".importer.FerrieresCSVValuesMapping"
+        provides="imio.urban.dataimport.interfaces.IValuesMapping"
+        name="values mapping"
+    />
+
+
+</configure>
